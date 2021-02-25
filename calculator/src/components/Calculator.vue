@@ -1,7 +1,7 @@
 <template>
   <div class="calculator">
     <div class='display'>{{current || '0'}}</div>
-    <div class='btn'>C</div>
+    <div @click='clear' class='btn'>C</div>
     <div class='btn'>+/-</div>
     <div class='btn'>%</div>
     <div class='btn operator'>÷</div>
@@ -28,6 +28,11 @@ export default {
     return {
       current: ''
     }
+  },
+  methods:{
+    clear(){
+      this.current = ''
+    }
   }
 }
 </script>
@@ -51,6 +56,7 @@ export default {
 .btn {
   background-color: #eee;
   border: 1px solid #999;
+  cursor: pointer;
 }
 .operator {
   background-color: orange;
