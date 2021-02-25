@@ -71,11 +71,11 @@ export default {
       this.savePrevious();
     },
     add(){
-      this.operator = (a, b) => parseFloat(a) + parseFloat(b);
+      this.operator = (a, b) => a + b;
       this.savePrevious();
     },
     equals(){
-     this.current = this.operator(this.previous, this.current);
+     this.current = this.operator(parseFloat(this.previous), parseFloat(this.current));
     }
   }
 }
